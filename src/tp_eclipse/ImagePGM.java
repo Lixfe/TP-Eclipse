@@ -37,8 +37,5 @@ public ImagePGM(){
 	this.pixels = new int[0][0];
 }
 
-public ImagePGM(String addresseImage){
-	//Scanner sc = new 
-}
 
 }
