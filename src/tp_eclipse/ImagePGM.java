@@ -7,22 +7,11 @@ import java.io.IOException;
 
 public class ImagePGM {
 	
-/**
- * Largeur de l image
- */
-	int largeur;
-	/**
-	 * Longueur de l image
-	 */
-int longueur;
-/**
- * Donne la plus grande valeur de niveaux de gris presente dans l image
- */
-int maxNiveauGris;
-/**
- * Matrice representant les pixels
- */
-int pixels[][];
+
+private	int largeur;
+private int longueur;
+private int maxNiveauGris;
+private int pixels[][];
 
 
 /**
