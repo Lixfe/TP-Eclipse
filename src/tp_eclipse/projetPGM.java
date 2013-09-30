@@ -7,6 +7,8 @@ public class projetPGM {
 		// TODO Auto-generated method stub
 
 		ImagePGM imageIena = new ImagePGM("lena.pgm");
+		ImagePGM histoIena = imageIena.histogramme();
+		
 }
 	
 }

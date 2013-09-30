@@ -75,6 +75,51 @@ public ImagePGM(String nomFichier){
 }
 
 
+public ImagePGM histogramme() {
+	/* On remplit un tableau contenant toutes les occurrences des 
+	 differents niveaux de gris, puis on crée une image PGM avec l'histogramme correspondant.
+	 */
+	
+	int occurrences[] = new int[this.maxNiveauGris];
+	
+	for (int i = 0; i < this.hauteur; i++) {
+		for (int j = 0; j < this.largeur; j++) {
+			occurrences[this.pixels[i][j]-1]++;
+		}
+	}
+	
+
+	ImagePGM imageResultat = new ImagePGM();
+	
+	imageResultat.largeur = occurrences.length;
+	imageResultat.maxNiveauGris = this.maxNiveauGris;
+	imageResultat.pixels = new int[imageResultat.hauteur][imageResultat.largeur];
+	
+	/*Trouver max du tableau pour déterminer la hauteur de l'image résultat
+	 * 
+	 */
+	int n = 0;
+	for (int i = 0; i < occurrences.length; i++) {
+		if (occurrences[i]>n) {
+			n = occurrences[i];
+		}
+	}
+	
+	System.out.println(n);
+
+	imageResultat.hauteur = n+1;
+	
+	
+	for (int j = 0; j < occurrences.length; j++) {
+		for (int i = 0; i < occurrences[j]; i++) {
+			imageResultat.pixels[i][j] = imageResultat.maxNiveauGris;
+		}
+	}
+	
+
+	return imageResultat;
+}
+
 
 
 }
